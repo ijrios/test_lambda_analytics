@@ -9,7 +9,7 @@ export const loginRequest = async (usuario) => axios.post(`${API}acceso`, usuari
 
 export const logoutRequest = async (usuario) => axios.post(`${API}salir`,usuario,{
     headers: {
-        'Authorization': `Token ${usuario.token}`  // Enviar el token en el encabezado
+        'Authorization': `Token ${usuario.token}`  
       }
 }
 );

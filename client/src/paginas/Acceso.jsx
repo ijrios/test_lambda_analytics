@@ -18,7 +18,7 @@ export const Acceso = () => {
   })
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/Autenticado");
+    if (isAuthenticated)navigate("/Autenticado");
   }, [isAuthenticated]);
 
 

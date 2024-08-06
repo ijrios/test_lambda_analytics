@@ -11,6 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from documents.models import Document
 import requests
+from django.core.files.storage import default_storage
 
 @api_view(['POST'])
 def login(request):
@@ -116,3 +117,20 @@ def download_document():
     
     except requests.RequestException as e:
         return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def subir_documento(request):
+    if 'archivo' not in request.FILES:
+        return Response({'error': 'No se envió ningún archivo'}, status=status.HTTP_400_BAD_REQUEST)
+
+    archivo = request.FILES['archivo']
+    nombre_archivo = default_storage.save(archivo.name, archivo)
+
+    documento = Document(title=nombre_archivo, file=archivo)
+    documento.save()
+
+    serializer = DocumentSerializer(documento)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)

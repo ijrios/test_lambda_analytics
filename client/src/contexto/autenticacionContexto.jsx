@@ -48,6 +48,7 @@ export const AuthProvider = ({ children }) => {
       Cookies.set("authData", JSON.stringify(res.data)); // Almacena el objeto completo en las cookies
       setUser(res.data.user.username);
       setIsAuthenticated(true);
+
     } catch (error) {
       //console.log(error);
       setErrors(error);

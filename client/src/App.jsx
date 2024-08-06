@@ -6,6 +6,7 @@ import Registro from './paginas/Registro'
 import Pagina_inicio from './paginas/Pagina_inicio'
 import Autenticado from './paginas/Autenticado'
 import Adios from './paginas/Adios'
+import SubirDocumento from "./paginas/SubirDocumento";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <Route path="/Perfil" element= {<h1> Perfil</h1>} />
     <Route path="/Autenticado" element= {<Autenticado />} />
     <Route path="/Adios" element= {<Adios />} />
+    <Route path="/SubirDocumento" element= {<SubirDocumento />} />
     </Routes>
     </main>
     </BrowserRouter>

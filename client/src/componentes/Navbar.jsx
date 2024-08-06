@@ -18,7 +18,7 @@ export function Navbar() {
               Bienvenido {username}
             </li>
             <li>
-              <ButtonLink to="/">Descarga</ButtonLink>
+              <ButtonLink to="/SubirDocumento">Descarga</ButtonLink>
             </li>
             <li>
               <ButtonLink to="/Adios" onClick={() => logout()}>

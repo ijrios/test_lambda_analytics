@@ -25,4 +25,6 @@ urlpatterns = [
     re_path('perfil', views.profile),
     re_path('registro', views.register),
     re_path('descargar', views.download_document),
+    re_path('descargar', views.download_document),
+
 ]
