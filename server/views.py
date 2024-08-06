@@ -22,7 +22,7 @@ def login(request):
         return Response({'error': "Usuario no encontrado"}, status=status.HTTP_400_BAD_REQUEST)
 
     if not usuario.check_password(request.data['password']):
-        return Response({'error': "Contraseña invalida"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error': "Contraseña invalida"}, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
     
     token, created = Token.objects.get_or_create(user=usuario)
@@ -98,7 +98,7 @@ def profile(request):
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
-def download_document(request):
+def download_document():
     file_url = 'https://www.dane.gov.co/files/operaciones/PM/bol-PMPDET-2023.pdf'
     
     try:
