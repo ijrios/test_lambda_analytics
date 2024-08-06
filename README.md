@@ -128,8 +128,7 @@ Este proyecto incluye:
 
 ### Frontend
 
-- **Iniciar Desarrollo**: `npm run dev`
-- **Construir para Producción**: 
+- **Iniciar Cliente**: `npm run dev`
 
 
 ## Imágenes
