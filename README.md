@@ -130,3 +130,17 @@ Este proyecto incluye:
 
 - **Iniciar Desarrollo**: `npm run dev`
 - **Construir para Producción**: 
+
+
+## Imágenes
+
+A continuación se muestran algunas imágenes relacionadas con el proyecto:
+
+### Imagen 1
+![P6](./path/to/P6.png)
+
+### Imagen 2
+![P7](./path/to/P7.png)
+
+### Imagen 3
+![P8](./path/to/P8.png)
