@@ -35,7 +35,7 @@ Este proyecto incluye:
 1. **Instalación de Dependencias:**
    - Asegúrate de tener Python instalado y el entorno virtual configurado en el proyecto.
    - Abre Visual Studio Code y asegúrate de tener instalada la extensión de Python.
-   - Presiona `F1` y selecciona el intérprete de Python adecuado para el proyecto.
+   - Presiona `F1` y selecciona el intérprete de Python adecuado (.venv) ya agregado al proyecto.
 
 2. **Iniciar el Servidor:**
    - Activa el entorno virtual:
