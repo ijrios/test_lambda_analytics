@@ -12,7 +12,6 @@ Este proyecto consta de un backend construido con Django REST Framework y un fro
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Uso](#uso)
 - [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Descripción del Proyecto
 
