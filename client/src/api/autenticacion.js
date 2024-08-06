@@ -7,6 +7,9 @@ export const registerRequest = async (usuario) => axios.post(`${API}registro`, u
 
 export const loginRequest = async (usuario) => axios.post(`${API}acceso`, usuario);
 
+export const DescargaRequest = async () => axios.post(`${API}descarga`);
+
+
 export const logoutRequest = async (usuario) => axios.post(`${API}salir`,usuario,{
     headers: {
         'Authorization': `Token ${usuario.token}`  

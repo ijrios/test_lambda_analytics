@@ -89,6 +89,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'server.wsgi.application'
 
 
+CELERY_BEAT_SCHEDULE = {
+    'subir-documento-cada-hora': {
+        'task': 'documents.tasks.subir_documento_automaticamente',
+        'schedule': 3600.0,  # Cada 3600 segundos (1 hora)
+        'args': ('https://www.dane.gov.co/files/operaciones/PM/bol-PMPDET-2023.pdf',),
+    },
+}
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
+
+
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 

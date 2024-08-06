@@ -44,6 +44,11 @@ function SubirDocumento() {
                 >
                     Subir Documento
                 </button>
+                <br /> 
+                
+                <ButtonLink to="/SubirDocumento" onClick={() => DescargaRequest()}>
+                Tarea Automatica
+              </ButtonLink>
             </form>
         </section>
     );
