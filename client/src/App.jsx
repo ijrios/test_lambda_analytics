@@ -4,6 +4,8 @@ import { Navbar } from "./componentes/Navbar";
 import Acceso from './paginas/Acceso' 
 import Registro from './paginas/Registro'
 import Pagina_inicio from './paginas/Pagina_inicio'
+import Autenticado from './paginas/Autenticado'
+import Adios from './paginas/Adios'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
     <Route path="/Acceso" element= {<Acceso />} />
     <Route path="/Registro" element= {<Registro />} />
     <Route path="/Perfil" element= {<h1> Perfil</h1>} />
+    <Route path="/Autenticado" element= {<Autenticado />} />
+    <Route path="/Adios" element= {<Adios />} />
     </Routes>
     </main>
     </BrowserRouter>

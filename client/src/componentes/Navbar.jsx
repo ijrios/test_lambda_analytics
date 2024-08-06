@@ -21,7 +21,7 @@ export function Navbar() {
               <ButtonLink to="/">Descarga</ButtonLink>
             </li>
             <li>
-              <ButtonLink to="/" onClick={() => logout()}>
+              <ButtonLink to="/Adios" onClick={() => logout()}>
                 Cerrar sesión
               </ButtonLink>
             </li>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
-import { loginRequest, registerRequest} from "../api/autenticacion";
+import { loginRequest, registerRequest, logoutRequest} from "../api/autenticacion";
 import Cookies from "js-cookie";
 
 const AuthContext = createContext();
@@ -44,6 +44,8 @@ export const AuthProvider = ({ children }) => {
   const signin = async (usuario) => {
     try {
       const res = await loginRequest(usuario);
+      console.log(res.data)
+      Cookies.set("authData", JSON.stringify(res.data)); // Almacena el objeto completo en las cookies
       setUser(res.data.user.username);
       setIsAuthenticated(true);
     } catch (error) {
@@ -52,19 +54,16 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = (usuario) => {
-    try {
-      const res = logoutRequest(usuario);
-      console.log(res)
-      if (res.status === 200){
-        Cookies.remove("token");
-        setUser(null);
-        setIsAuthenticated(false);
-      }
-    } catch (error) {
-      console.log(error);
-      setErrors(error);
-    }
+  const logout = async () => {
+    
+      const authData = JSON.parse(Cookies.get("authData")); // Recupera el objeto almacenado
+      const res = await logoutRequest(authData);  
+      console.log(res.data.token)
+      Cookies.remove("authData"); // Elimina el objeto almacenado
+      Cookies.remove("token");
+      setUser(res.data.user.username);
+      setIsAuthenticated(false);
+   
   };
 
   useEffect(() => {
@@ -81,7 +80,7 @@ export const AuthProvider = ({ children }) => {
         console.log(res);
         if (!res.data) return setIsAuthenticated(false);
         setIsAuthenticated(true);
-        setUser(res.data);
+        setUser(res.data.user.username);
         setLoading(false);
       } catch (error) {
         setIsAuthenticated(false);
