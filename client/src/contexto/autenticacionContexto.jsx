@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       const res = await registerRequest(usuario);
       console.log(res)
       if (res.status === 201) {
-        setUser(res.data);
+        setUser(res.data.user.username);
         setIsAuthenticated(true);
       }
     } catch (error) {

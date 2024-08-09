@@ -15,7 +15,7 @@ export const Registro_esquema = z.object({
   correo: z.string().email({
     message: "Por favor ingresa el correo",
   }),
-  contraseña: z.string().min(6, {
+  pass: z.string().min(6, {
     message: "La contraseña debe ser mayor a 6 caracteres",
   }),
    nombre: z
@@ -25,7 +25,7 @@ export const Registro_esquema = z.object({
       .min(3, {
         message: "El nombre debe tener mas de 3 caracteres",
       }),
-    usuario: z
+    username: z
       .string({
         required_error: "Usuario es requerido",
       })
